@@ -15,3 +15,7 @@ Date         Folder           Subfolder
 7-20         Dataset          TX
 
 7-21         Dataset          TX
+
+7-30         Scraping         MB multipage webscrape
+
+8-6          APIs             Finding Spotipy Playlist Features
