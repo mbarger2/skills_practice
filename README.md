@@ -18,4 +18,14 @@ Date         Folder           Subfolder
 
 7-30         Scraping         MB multipage webscrape
 
-8-6          APIs             Finding Spotipy Playlist Features
+8-6          APIs             Spotipy
+
+8-10         APIs             Spotipy
+
+8-11         APIs             Spotipy
+
+8-12         APIs             Spotipy
+
+8-13         APIs             Spotipy
+
+8-16         APIs             Spotipy
