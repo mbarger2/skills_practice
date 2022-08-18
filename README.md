@@ -29,3 +29,5 @@ Date         Folder           Subfolder
 8-13         APIs             Spotipy
 
 8-16         APIs             Spotipy
+
+8-17         APIs             Spotipy
