@@ -1,33 +1,3 @@
 # Skills Practice
 
-This repo is used to continue to work on various analyst skills
-
-Log
-
-Date         Folder           Subfolder
-
-7-14         Dataset          TX
-
-7-16         Dataset          TX
-
-7-17         Dataset          TX
-
-7-20         Dataset          TX
-
-7-21         Dataset          TX
-
-7-30         Scraping         MB multipage webscrape
-
-8-6          APIs             Spotipy
-
-8-10         APIs             Spotipy
-
-8-11         APIs             Spotipy
-
-8-12         APIs             Spotipy
-
-8-13         APIs             Spotipy
-
-8-16         APIs             Spotipy
-
-8-17         APIs             Spotipy
+In my own time, beginning in the summer of 2022, I am choosing to work through different exercises of my own creation to continue to train my Data Analytic skills as I look for a position in the field. These exercises will primarily use python in Jupyter and vary between cleaning, modeling, creating/manipulating raw data, web scraping, etc. but occasionally will use MySQL, Excel VBA, and Tableau as well. 
