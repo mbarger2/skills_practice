@@ -31,4 +31,10 @@ select count(*) from film where length >= 180;
 select title from film order by length desc limit 1;
 select length(title) from film order by length desc limit 1;
 
-Get the name and email formatted. Example: Mary SMITH - mary.smith@sakilacustomer.org.
+select concat(first_name,'.',last_name,'@sakilacustomer.org') as 'email path' from customer;
+
+
+
+
+
+
