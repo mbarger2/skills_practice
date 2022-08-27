@@ -1,4 +1,5 @@
 use sakila;
+
 How many distinct (different) actors last names are there?;
 select count(distinct(last_name)) from actor;
 
@@ -21,8 +22,9 @@ dayofweek(return_date) as return_weekday from rental LIMIT 20;
 select *, month(rental_date)as rental_month, dayname(rental_date) as rental_weekday, month(return_date)as return_month, 
 dayname(return_date) as return_weekday from rental LIMIT 20;
 
-NEXT TIME:
-
+NEXT TIME:;
+select count(*) from rental; 16044;
+select count(*) from rental where(rental_date =(NOW() - INTERVAL 1 MONTH));
 Add an additional column day_type with values 'weekend' and 'workday' depending on the rental day of the week. Check the CASE function.;
 dayofweek 1,7 is weekend
 dayofweek 2-6 is weekday
