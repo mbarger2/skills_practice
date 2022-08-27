@@ -23,8 +23,15 @@ select *, month(rental_date)as rental_month, dayname(rental_date) as rental_week
 dayname(return_date) as return_weekday from rental LIMIT 20;
 
 NEXT TIME:;
+SELECT rental_date from rental limit 5;
+SELECT DATE_SUB(rental_date, INTERVAL 31 DAY);
 select count(*) from rental; 16044;
-select count(*) from rental where(rental_date =(NOW() - INTERVAL 1 MONTH));
+select count(*) from rental where rental_date <= (now() - INTERVAL 1 DAY);
+SELECT STR_TO_DATE(RENTAL_DATE, '%Y/%M/%D %H:%i:%s');
+
+
+
+
 Add an additional column day_type with values 'weekend' and 'workday' depending on the rental day of the week. Check the CASE function.;
 dayofweek 1,7 is weekend
 dayofweek 2-6 is weekday
