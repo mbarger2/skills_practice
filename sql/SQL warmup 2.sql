@@ -24,11 +24,15 @@ dayname(return_date) as return_weekday from rental LIMIT 20;
 
 NEXT TIME:;
 SELECT rental_date from rental limit 5;
-SELECT DATE_SUB(rental_date, INTERVAL 31 DAY);
-select count(*) from rental; 16044;
-select count(*) from rental where rental_date <= (now() - INTERVAL 1 DAY);
-SELECT STR_TO_DATE(RENTAL_DATE, '%Y/%M/%D %H:%i:%s');
+select *, date_format(convert(SUBSTRING_INDEX(rental_date, ' ', 1), date), '%M %D %Y') as date_is from sakila.rental;
 
+
+select min(rental_date), max(rental_date), (max(rental_date)-interval 1 month) from sakila.rental;
+
+SELECT * FROM sakila.rental WHERE DATE(return_date) BETWEEN '2006-01-14 15:16:03' and '2006-02-14 15:16:03';
+
+
+select * from sakila where rental_date > (DATE = '2005-08-02 02:35:22') ;
 
 
 
