@@ -31,15 +31,17 @@ select min(rental_date), max(rental_date), (max(rental_date)-interval 1 month) f
 
 SELECT * FROM sakila.rental WHERE DATE(return_date) BETWEEN '2006-01-14 15:16:03' and '2006-02-14 15:16:03';
 
+SELECT * FROM sakila.rental WHERE DATE(return_date) BETWEEN max(rental_date) and interval 1 month;
 
 select * from sakila where rental_date > (DATE = '2005-08-02 02:35:22') ;
 
 
 
-Add an additional column day_type with values 'weekend' and 'workday' depending on the rental day of the week. Check the CASE function.;
-dayofweek 1,7 is weekend
-dayofweek 2-6 is weekday
+-- Add an additional column day_type with values 'weekend' and 'workday' depending on the rental day of the week. Check the CASE function.
+dayofweek 1,7 is weekend;
+dayofweek 2-6 is weekday;
 
-How many rentals were in the last month of activity?;
-
+-- How many rentals were in the last month of activity?;
+SELECT DATA_TYPE from INFORMATION_SCHEMA. COLUMNS where table_schema = 'sakila' and table_name = 'rental';
+SELECT DATA_TYPE from rental COLUMNS where table_schema = 'sakila' and table_name = 'rental_date';
 select datediff(max(rental_date),min(rental_date)) from rental;
