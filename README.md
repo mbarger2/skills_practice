@@ -16,4 +16,4 @@ SQL -             SQL warmup 2
 
 SQL -             SQL warmup 3
 
-Excel -           my_cds_collection VBA
+Excel -           CDs VBA
