@@ -45,3 +45,12 @@ dayofweek 2-6 is weekday;
 SELECT DATA_TYPE from INFORMATION_SCHEMA. COLUMNS where table_schema = 'sakila' and table_name = 'rental';
 SELECT DATA_TYPE from rental COLUMNS where table_schema = 'sakila' and table_name = 'rental_date';
 select datediff(max(rental_date),min(rental_date)) from rental;
+
+--------------------
+Try this:
+select count(*) from sakila.rental
+where date_format(rental_date, "%Y") = (select date_format(max(rental_date), "%Y") from sakila.rental)
+and date_format(rental_date, "%M") = (select date_format(max(rental_date), "%M") from sakila.rental);
+This will check the data in the last month of the rentals
+Max(rental_date) is in Feb 2006
+So I am extracting all the results from that month of the yaer
