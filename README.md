@@ -14,8 +14,8 @@ SQL -             SQL warmup 1
 
 SQL -             SQL warmup 2
 
-SQL -             SQL warmup 3
-
 Excel -           CDs VBA
 
 Excel -           Simple Macros
+
+SQL -             SQL warmup 3
