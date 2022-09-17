@@ -38,6 +38,10 @@ select DISTINCT(breed) from cats;
 update cats set age=14 where name='Misty';
 select * from cats where name ='Misty';
 
+update books set title ='fake_book' where title='fake book';
+
+
+
 -- Quick Exercises
 select * from cats where name = 'Jackson';
 update cats set name ='Jack' where name ='Jackson';
