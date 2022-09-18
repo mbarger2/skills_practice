@@ -17,6 +17,7 @@ select concat_ws(' - ', title, author_fname, author_lname) from books;
 
 -- SUBSTRING
 select substring('Hello World',1,4);
+select substring('Hello World',1,1);
 select substr('Hello World',1,4);
 select substr('Hello World',7);  -- returns string starting at given position ('World')
 select substr('Hello World',-5);  -- returns string starting at given position counting from the end to the left ('World')
