@@ -3,6 +3,9 @@
 -- Create a database
 Create database cat_app;
 
+-- Confirm which database you're in 
+select database();
+
 -- Activate database for use
 use cat_app;
 
