@@ -31,7 +31,38 @@ show table from cat_app;
 drop database cat_app;
 show table from cat_app;
 
--- EXERCISE
+-- ALTER COMMANDS FOR A TABLE/COLUMNS
+create table testcats(
+	id int AUTO_INCREMENT PRIMARY KEY,
+	name varchar(25),
+    age int,
+    breed varchar(25)
+    );
+select * from testcats;
+
+alter table testcats 
+	add state char(2) 
+    AFTER breed;
+
+alter table testcats
+	modify breed varchar(30) AFTER state;
+select * from testcats;
+
+select * from testcats;
+
+alter table testcats
+	drop column breed;
+
+alter table testcats 
+add breed varchar(30) after age;
+
+alter table testcats
+change column breed cat_type varchar(30) after age;
+select * from testcats;
+alter table testcats rename to testcatsrenamed;
+show tables in cat_app;
+
+-- EXERCISES
 create database pastries;
 use pastries;
 show tables from pastries;
