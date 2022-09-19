@@ -22,6 +22,10 @@ group by released_year order by released_year;
 select concat(author_fname, ' ',author_lname) as Author, 
 title from books where pages = (select max(pages) from books);
 
+-- FLOOR/CEILING
+select floor(avg(amount)) from bank.order; -- FLOOR sets a threshold and returns the closest value equal to the value or below
+select ceiling(avg(amount)) from bank.order; -- CEILING sets a threshold and returns the closest value equal to the value or above
+
 -- EXERCISES
 SELECT COUNT(*) from books;
 select concat('In ',released_year, ' ',count(*),' book(s) were released.') from books 

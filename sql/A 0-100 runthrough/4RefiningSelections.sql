@@ -38,6 +38,20 @@ select title from books where stock_quantity like '____'; -- 4 _ for 4 digits
 select title,stock_quantity from books where stock_quantity like '%__%'; -- int w/ 2+ digits
 select title from books where title like '%\%%';
 
+-- REGEXP
+select * from bank.order 
+where k_symbol regexp 'o$';
+
+select * from bank. district 
+where k_sympol regexp '^s';
+
+select * from bank.district
+where a2 regexp 'cesk[ey]';
+
+
+
+
+
 -- EXERCISES
 select title from books where title like '%stor%';
 select title, pages from books order by 2 desc limit 1;
