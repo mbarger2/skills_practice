@@ -148,7 +148,10 @@ limit 20;
 select *, rank() over (order by count(*)) 'rank' from bank.district
 group by a3
 order by count(*);
+use bank;
 
+select *, date(date), lag(date,1) over(date) from account;
+select ;
 -- FROM 10-19 HA msql subqueries
 select * from bank.loan
 where amount > (
@@ -187,8 +190,7 @@ create procedure number_of_rows_proc (out param1 int)
 begin
 select COUNT(*) into param1 from bank.account;
 end;
-//
-delimiter ;
+// delimiter ;
 
 call number_of_rows_proc(@x);
 select @x;

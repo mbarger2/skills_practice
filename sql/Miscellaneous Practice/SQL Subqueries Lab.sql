@@ -27,7 +27,7 @@ join sakila.film_actor b on a.film_id = b.film_id
 join sakila.actor c on b.actor_id = c.actor_id)
 select count(*) from cte_movie
 where title = 'Alone Trip';
-
+use sakila;
 
 
 

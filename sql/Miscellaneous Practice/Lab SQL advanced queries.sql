@@ -23,10 +23,10 @@ group by actor_id;
 
 with cte_whocares as 
 (
-select film_actor.actor_id,  actor_name, film_count, title, 
+select distinct film_actor.actor_id,  actor_name, film_count, title, 
 rank() over(partition by film_id order by film_count desc) as rank_actors
 from sakila.film_actor
 join whocares on whocares.actor_id = film_actor.actor_id
 order by film_id)
 select * from cte_whocares
-where rank_actors = 1;
+where rank_actors = 1 order by film_count desc;
