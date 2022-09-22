@@ -13,6 +13,7 @@ order by a1.actor_id;
 
 -- 2
 -- For each film, list actor that has acted in more films.
+use sakila;
 drop temporary table whocares;
 create temporary table whocares
 select a.actor_id, count(a.film_id) as film_count, b.title, concat(c.first_name,' ',c.last_name) as actor_name
@@ -20,7 +21,8 @@ from sakila.film_actor a
 join sakila.film b on a.film_id=b.film_id
 join sakila.actor c on c.actor_id = a.actor_id
 group by actor_id;
-
+SELECT count(distinct film_count) from whocares;
+select distinct count(*) from whocares;
 with cte_whocares as 
 (
 select distinct film_actor.actor_id,  actor_name, film_count, title, 
