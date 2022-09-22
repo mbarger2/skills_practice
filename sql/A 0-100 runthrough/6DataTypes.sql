@@ -53,12 +53,17 @@ insert into people(name, birthdate, birthtime, birthdt) values
 ('Toaster', curdate(), curtime(), now());
 select * from people;
 
+use book_shop;
+
 select name, birthdate from people;
 select name, birthdate, day(birthdate), dayname(birthdate), dayofweek(birthdate), dayofyear(birthdate) from people;
 select name, birthdt, day(birthdt), dayname(birthdt), dayofweek(birthdt), dayofyear(birthdt), monthname(birthdt),hour(birthdt), minute(birthdt), second(birthdt) from people;
 
 -- date_format, time_format commands are highly versatile
 select date_format(birthdt, '%W, %M %Y') from people;
+desc people;
+select birthdt from people where date_format(birthdt, '%M %Y') = 'November 1983';
+select birthdate from people where date_format(birthdate, '%M %Y') = 'November 1983';
 select date_format(birthdt, '%h %i %s') from people;
 select date_format(birthdt, 'Was born on a %W') as birthdate from people;
 select date_format(birthdt, '%m/%d/%Y') from people;
@@ -72,15 +77,18 @@ select DATEDIFF(now(),birthdate)/365 as diff_in_years from people;
 select name, birthdate, DATEDIFF(now(),birthdate)/365 as diff_in_years from people; 
 
 -- DATE_ADD, DATE_SUB (has many arguments for versatility as well)
+use book_shop;
 select birthdt, DATE_ADD(birthdt, INTERVAL 1 quarter), 
 DATE_ADD(birthdt, INTERVAL 1 YEAR) FROM PEOPLE;
 SELECT BIRTHDT, date_add(birthdt, interval 1 month) from people;
 select birthdt, date_add(birthdt, interval '5-8' year_month) from people;
 select birthdt, date_add(birthdt, interval 10 second) from people;
-
+show tables;
+rename table books_etc to books;
 -- adding multiple units of time at the same time (ie years, seconds to same date)
 select birthdt, birthdt + interval '5-8' year_month + interval 19 hour as newdatetime from people;
-
+select max(birthdt), max(birthdt)- interval 1 year from people;
+select * from people where birthdt > (max(birthdt) - interval 1 year);
 -- Timestamps
 -- has a range between '1970-01-01 00:00:01' UTC to '2038-01-19 03:14:07' UTC
 -- storage is doubled for date time compared to timestamps: 

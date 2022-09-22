@@ -236,3 +236,23 @@ cross join (
 select distinct type from bank.disp
 ) sub2
 order by account_id;
+
+
+
+
+
+use tv_app;
+
+select title, rating, last_name from series 
+JOIN reviews  on series.id = reviews.series_id
+JOIN reviewers  on reviewers.id=reviews.reviewer_id;
+
+use tv_app;
+select a1.title, b1.rating, c1.last_name from series a1
+JOIN reviews b1 on a1.id = b1.series_id
+JOIN reviewers c1 on c1.id=b1.reviewer_id;
+
+select * from series a -- a.title, b.rating, c.last_name
+JOIN reviews b on a.id = b.series_id
+JOIN reviewers c on c.id=b.reviewer_id
+where char_length(a.title)>15 and b.reviewer_id <5 and char_length(c.last_name) <7 ;
