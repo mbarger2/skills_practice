@@ -1,0 +1,28 @@
+let length;
+length = 10 ;
+let width = 15 ;
+let area = length * width;
+
+let animal = "dog";
+if(animal === 'dog'){
+    alert('Woof!')
+    }
+    else{ alert('This isn\'t my dog!')
+    }
+
+// creating a function
+
+function sayHi(name) {
+    alert('Hello,' + name);
+}
+sayHi(Susan);
+
+//2nd function with return, not alert
+
+function circleArea(radius) {
+    let area = 3.14 * (radius ** 2);
+    return area;
+}
+let area = circleArea(5); // area will be assigned a value of 78.5
+alert(area);
+area = circleArea(3);
