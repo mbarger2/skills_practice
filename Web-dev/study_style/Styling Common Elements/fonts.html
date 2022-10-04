@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Styling Fonts</title>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> 
+	
+	<style>
+		.webfont {
+			font-family: "Dancing Script", Arial;
+			font-size: 24px;
+		}
+		
+		.bold {
+			font-weight: bold;
+		}
+		
+		.lighter {
+			font-weight: lighter;
+		}
+		
+		.bolder {
+			font-weight: bolder;
+		}
+		
+		.lowbold {
+			font-weight: 100;
+		}
+		
+		.midbold {
+			font-weight: 450;
+		}
+		
+		.highbold {
+			font-weight: 900;
+		}
+		
+		.italic {
+			font-style: italic;
+		}
+		
+		.lower {
+			text-transform: lower;
+		}
+		
+		.upper {
+			text-transform: uppercase;
+		}
+		
+		.capital {
+			text-transform: capitalize;
+		}
+
+		.under {
+			text-decoration: underline;
+		}
+		
+		.over {
+			text-decoration: overline;
+		}
+		
+		.strike {
+			text-decoration: solid line-through red;
+		}
+		
+		h1 {
+			text-align: center;
+		}
+	</style>
+  </head>
+  <body>
+		<h1>Fonts</h1>
+		<p class="webfont">This is a web font, dancing script from Google Fonts</p>
+		
+		<p>This is <span class="bold">bold font</span> followed by <span class="lighter">lighter font</span> then <span class="bolder">bolder font</span> then <span class="lowbold">100 bold</span>, <span class="midbold">450 bold</span>, and <span class="highbold">900 bold</span>.</p>
+		
+		<p>Fonts can be normal or <span class="italic">italic</span>.</p>
+		
+		<p>They can also transform into <span class="upper">all uppercase</span>, <span class="lower">ALL LOWERCASE</span>, <span class="capital">each word capitalized</span>.</p>
+		
+		<p>They can also <span class="under">underline text</span>, <span class="over">overline text</span>, or <span class="strike">strike text</span>.</p>
+  </body>
+</html>

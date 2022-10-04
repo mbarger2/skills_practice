@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Forms</title>
+  </head>
+  <body>
+	<h1>Forms Examples</h1>
+	<p>This document has samples to go with the lesson. Use View Source or open in an editor to view the HTML.</p>
+	<h2>Contact Form</h2>
+	<form action="/some-server-location" method="post">
+		<div>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name">
+		</div>
+		<div>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email">
+		</div>
+		<div>
+			<label for="message">Message:</label>
+			<textarea id="message" name="message"></textarea>
+		</div>
+		<div>
+			<button type="submit">Send Message</button>
+		</div>
+	</form>
+	<h2>Boolean Attributes</h2>
+	<p>Here are some disabled, readonly, and checked attribute examples.</p>
+	<form action="/some-server-location" method="post">
+		<div>
+			<input type="checkbox" id="hasCar" name="hasCar" checked>
+			<label for="hasCar">Default checked</label>
+		</div>
+		<div>
+			<label for="dbid">ID (readonly):</label>
+			<input type="text" id="dbid" name="dbid" readonly value="5">
+		</div>
+		<div>
+			<label for="distext">Disabled:</label>
+			<input type="text" id="distext" name="distext" disabled value="This is disabled"></input>
+		</div>
+	</form>
+	<h2>Other Controls</h2>
+	<p>Here are the other control samples.</p>
+	<form action="/some-server-location" method="post">
+		<div>
+			<label for="colorwheel">Pick a color (single)</label>
+			<select id="colorwheel" name="colorwheel">
+				<optgroup label="Primary Colors">
+					<option value="r">Red</option>
+					<option value="b">Blue</option>
+					<option value="y">Yellow</option>
+				</optgroup>
+				<optgroup label="Secondary Colors">
+					<option value="o">Orange</option>
+					<option value="p">Purple</option>
+					<option value="g">Green</option>
+				</optgroup>
+			</select>
+		</div>
+		<div>
+			<label for="colorwheel">Pick a color (multiple)</label>
+			<select id="colorwheel" name="colorwheel" multiple>
+				<optgroup label="Primary Colors">
+					<option value="r">Red</option>
+					<option value="b">Blue</option>
+					<option value="y">Yellow</option>
+				</optgroup>
+				<optgroup label="Secondary Colors">
+					<option value="o">Orange</option>
+					<option value="p">Purple</option>
+					<option value="g">Green</option>
+				</optgroup>
+			</select>
+		</div>
+		<div>
+			<label for="selectedcolor">Pick a color (datalist)</label>
+			<input list="colors" name="selectedcolor">
+			<datalist id="colors">
+				<option value="red">
+				<option value="green">
+				<option value="blue">
+			</datalist>
+		</div>
+		<fieldset>
+			<legend>Pick a color</legend>
+			<input type="radio" id="radiored" name="radiocolor" value="r">
+			<label for="radiored">red</label><br>
+			<input type="radio" id="radiogreen" name="radiocolor" value="g">
+			<label for="radiogreen">green</label><br>
+			<input type="radio" id="radioblue" name="radiocolor" value="b">
+			<label for="radioblue">blue</label>
+		</fieldset>
+	</form>
+  </body>
+  
+</html>

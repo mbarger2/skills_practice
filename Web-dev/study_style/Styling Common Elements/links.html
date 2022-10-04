@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Styling Links</title>
+
+	<style>
+		ul {
+		  padding: 0;
+		  width: 100%;
+		}
+
+		li {
+		  display: inline;
+		}
+
+		a {
+		  outline: none;
+		  text-decoration: none;
+		  display: inline-block;
+		  width: 10%;
+		  margin-right: 0.625%;
+		  text-align: center;
+		  line-height: 3;
+		  color: black;
+		  font-weight: bold;
+		}
+
+		li:last-child a {
+		  margin-right: 0;
+		}
+
+		a:link, a:visited, a:focus {
+		  background: #dddddd;
+		}
+
+		a:hover {     
+		  background: orange;
+		}
+
+		a:active {
+		  background: red;
+		  color: white;
+		}
+	</style>
+  </head>
+  <body>
+		
+		<ul>
+		  <li><a href="#">Home</a></li>
+		  <li><a href="#">News</a></li>
+		  <li><a href="#">Sports</a></li>
+		  <li><a href="#">Weather</a></li>
+		  <li><a href="#">Entertainment</a></li>
+		</ul>
+		<p>This is a link bar example, notice the button-like look and hover effects.</p>
+  </body>
+</html>

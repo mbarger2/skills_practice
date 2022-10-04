@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Styling Lists</title>
+
+	<style>
+		.roman {
+			list-style-type: upper-roman;
+		}
+		
+		.outside {			
+			list-style-position: outside;
+		}
+		
+		.inside {			
+			list-style-position: inside;
+		}
+		
+		.custom {
+			list-style-image: url('assets/diamond.png');
+			list-style-position: inside;
+		}
+	</style>
+  </head>
+  <body>
+		<h1>Lists</h1>
+		<ul class="roman outside">Roman Outside
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ul>
+		<ul class="roman inside">Roman Inside
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ul>
+		<ul class="custom">Custom Bullet
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ul>
+		<ol start="3">Custom Start
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>		
+		</ol>
+		<ol start="3" reversed>Reversed
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>		
+		</ol>
+		<ol>Hard Coded Value
+			<li value="3">Item 1</li>
+			<li value="7">Item 2</li>
+			<li value="999">Item 3</li>		
+		</ol>
+  </body>
+</html>

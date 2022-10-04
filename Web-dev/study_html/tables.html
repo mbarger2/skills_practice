@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tables</title>
+	<style>
+		th, td {
+			border: 1px solid black;
+		}
+	</style>
+  </head>
+  <body>
+	<h1>Table Examples</h1>
+	<p>This document has samples to go with the lesson. Use View Source or open in an editor to view the HTML. We put a border style in for visual convenience.</p>
+	<h2>Standard Table</h2>
+	<table>
+		<tr>
+			<td>Row 1, Column 1</td>
+			<td>Row 1, Column 2</td>
+			<td>Row 1, Column 3</td>
+		</tr>
+		<tr>
+			<td>Row 2, Column 1</td>
+			<td>Row 2, Column 2</td>
+			<td>Row 2, Column 3</td>
+		</tr>
+	</table>
+	<h2>Table Headers</h2>
+	<table>
+		<tr>
+			<th></th>
+			<th>Q1</th>
+			<th>Q2</th>
+			<th>Q3</th>
+			<th>Q4</th>
+		</tr>
+		<tr>
+			<th>Electronics</th>
+			<td>$35M</td>
+			<td>$33M</td>
+			<td>$37M</td>
+			<td>$40M</td>
+		</tr>
+		<tr>
+			<th>Clothing</th>
+			<td>$20M</td>
+			<td>$23M</td>
+			<td>$18M</td>
+			<td>$27M</td>
+		</tr>
+		<tr>
+			<th>Furniture</th>
+			<td>$15M</td>
+			<td>$17M</td>
+			<td>$13M</td>
+			<td>$15M</td>
+		</tr>
+	</table>
+	<h2>Rowspan</h2>
+	<table>
+		<tr>
+			<th>Element</th>
+			<th>Spell</th>
+		</tr>
+		<tr>
+			<th rowspan="2">Fire</th>
+			<td>Burning Palm</td>
+		</tr>
+		<tr>
+			<td>Fireball</td>
+		</tr>
+		<tr>
+			<th rowspan="3">Water</th>
+			<td>Healing Rain</td>
+		</tr>
+		<tr>
+			<td>Ice Block</td>
+		</tr>
+		<tr>
+			<td>Frost Orb</td>
+		</tr>
+	</table>
+	<h2>Colspan</h2>
+	<table>
+		<tr>
+			<th></th>
+			<th>Q1</th>
+			<th>Q2</th>
+			<th>Q3</th>
+			<th>Q4</th>
+		</tr>
+		<tr>
+			<th>Electronics</th>
+			<td>$35M</td>
+			<td>$33M</td>
+			<td>$37M</td>
+			<td>$40M</td>
+		</tr>
+		<tr>
+			<th>Clothing</th>
+			<td>$20M</td>
+			<td>$23M</td>
+			<td>$18M</td>
+			<td>$27M</td>
+		</tr>
+		<tr>
+			<th>Furniture</th>
+			<td>$15M</td>
+			<td>$17M</td>
+			<td>$13M</td>
+			<td>$15M</td>
+		</tr>
+		<tr>
+			<th colspan="4">Total Revenue:</th>
+			<td>$293M</td>
+		</tr>
+	</table>
+	<h2>Colgroup</h2>
+	<table>
+		<colgroup>
+			<col></col>
+			<col style="background-color: red"></col>
+			<col span="4">
+			<col style="background-color: green" span="2"></col>
+		</colgroup>
+		<tr>
+			<th></th>
+			<th>M</th>
+			<th>T</th>
+			<th>W</th>
+			<th>R</th>
+			<th>F</th>
+			<th>S</th>
+			<th>S</th>
+		</tr>
+		<tr>
+			<th>Week 1</th>
+			<td>Assessment</td>
+			<td>Learning</td>
+			<td>Learning</td>
+			<td>Learning</td>
+			<td>Learning</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Week 2</th>
+			<td>Assessment</td>
+			<td>Learning</td>
+			<td>Learning</td>
+			<td>Learning</td>
+			<td>Learning</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Week 3</th>
+			<td>Assessment</td>
+			<td>Learning</td>
+			<td>Learning</td>
+			<td>Learning</td>
+			<td>Learning</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<h2>Caption, Head, Body, and Footer</h2>
+	<table>
+		<caption>2020 revenue projections</caption>
+		<thead>
+			<tr>
+				<th></th>
+				<th>Q1</th>
+				<th>Q2</th>
+				<th>Q3</th>
+				<th>Q4</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Electronics</th>
+				<td>$35M</td>
+				<td>$33M</td>
+				<td>$37M</td>
+				<td>$40M</td>
+			</tr>
+			<tr>
+				<th>Clothing</th>
+				<td>$20M</td>
+				<td>$23M</td>
+				<td>$18M</td>
+				<td>$27M</td>
+			</tr>
+			<tr>
+				<th>Furniture</th>
+				<td>$15M</td>
+				<td>$17M</td>
+				<td>$13M</td>
+				<td>$15M</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th colspan="4">Total Revenue:</th>
+				<td>$293M</td>
+			</tr>
+		</tfoot>
+	</table>	
+  </body>
+</html>
