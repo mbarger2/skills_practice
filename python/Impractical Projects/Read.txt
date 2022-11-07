@@ -1,0 +1,3 @@
+Using 'Impractical Python Projects' by Lee Vaughan as a guide, 
+I will be working on a variety of small projects to explore different 
+applications and uses of python.
