@@ -1,0 +1,3 @@
+I used the following site as a quick freshener of some very useful excel functions:
+
+https://www.goskills.com/Excel/Resources/Most-useful-Excel-functions-for-data-analysis
