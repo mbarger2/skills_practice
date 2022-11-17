@@ -17,7 +17,7 @@ select title, released_year from books where released_year = 2005 or released_ye
 
 -- NOT IN
 SELECT  title, released_year from books where released_year 
-not in ( 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014,2016) and released_year >= 2000 
+not in ( 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016) and released_year >= 2000 
 order by released_year;
 
 -- MODULUS
