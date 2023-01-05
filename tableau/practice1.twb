@@ -430,9 +430,14 @@
       <column caption='Yr Built' datatype='integer' name='[yr_built]' role='dimension' type='ordinal' />
       <column caption='Yr Renovated' datatype='integer' name='[yr_renovated]' role='dimension' type='quantitative' />
       <column aggregation='Sum' caption='Zipcode' datatype='integer' default-format='*00000' name='[zipcode]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column-instance column='[bedrooms]' derivation='Count' name='[cnt:bedrooms:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[bedrooms]' derivation='CountD' name='[ctd:bedrooms:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Yr Built 2010s]' derivation='InOut' name='[io:Yr Built 2010s:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Bedrooms (bin)]' derivation='None' name='[none:Bedrooms (bin):ok]' pivot='key' type='ordinal' />
       <column-instance column='[yr_built]' derivation='None' name='[none:yr_built:ok]' pivot='key' type='ordinal' />
       <column-instance column='[yr_renovated]' derivation='None' name='[none:yr_renovated:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[bathrooms]' derivation='Sum' name='[sum:bathrooms:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[bedrooms]' derivation='Sum' name='[sum:bedrooms:qk]' pivot='key' type='quantitative' />
       <group caption='Bedrooms (bin) Set' name='[Bedrooms (bin) Set]' name-style='unqualified' user:ui-builder='lasso-group'>
         <groupfilter function='except'>
           <groupfilter function='crossjoin'>
@@ -483,6 +488,58 @@
             </map>
             <map to='#a2a2a2'>
               <bucket>false</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0ibg9u21a1zdsg17cetup0v5alcd].[sum:bathrooms:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0ibg9u21a1zdsg17cetup0v5alcd].[cnt:bedrooms:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0ibg9u21a1zdsg17cetup0v5alcd].[ctd:bedrooms:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0ibg9u21a1zdsg17cetup0v5alcd].[sum:bedrooms:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Bedrooms (bin):ok]' type='palette'>
+            <map to='#2a5783'>
+              <bucket>11</bucket>
+            </map>
+            <map to='#2a5783'>
+              <bucket>33</bucket>
+            </map>
+            <map to='#376491'>
+              <bucket>10</bucket>
+            </map>
+            <map to='#42709e'>
+              <bucket>9</bucket>
+            </map>
+            <map to='#4c7dab'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#598ab6'>
+              <bucket>7</bucket>
+            </map>
+            <map to='#6798c1'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#75a6cc'>
+              <bucket>5</bucket>
+            </map>
+            <map to='#83b3d7'>
+              <bucket>4</bucket>
+            </map>
+            <map to='#94c2e1'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#a6d0ea'>
+              <bucket>2</bucket>
+            </map>
+            <map to='#b9ddf1'>
+              <bucket>1</bucket>
             </map>
           </encoding>
         </style-rule>
@@ -1213,6 +1270,7 @@
               <calculation class='bin' decimals='0' formula='[bedrooms]' peg='0' size='1' />
             </column>
             <column caption='Bedrooms' datatype='integer' name='[bedrooms]' role='measure' type='quantitative' />
+            <column-instance column='[bedrooms]' derivation='Count' name='[cnt:bedrooms:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Bedrooms (bin)]' derivation='None' name='[none:Bedrooms (bin):ok]' pivot='key' type='ordinal' />
             <column-instance column='[bedrooms]' derivation='Sum' name='[sum:bedrooms:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
@@ -1228,13 +1286,17 @@
           <aggregation value='true' />
         </view>
         <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0ibg9u21a1zdsg17cetup0v5alcd].[none:Bedrooms (bin):ok]' value='' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0ibg9u21a1zdsg17cetup0v5alcd].[none:Bedrooms (bin):ok]' value='' />
+          </style-rule>
           <style-rule element='annotation'>
-            <format attr='fill-color' id='annotation_3' value='#00000000' />
-            <format attr='fill-color' id='annotation_4' value='#00000000' />
-            <format attr='fill-color' id='annotation_5' value='#00000000' />
-            <format attr='fill-color' id='annotation_6' value='#00000000' />
-            <format attr='line-end-size' id='annotation_6' value='smallest' />
-            <format attr='fill-color' id='annotation_7' value='#00000000' />
+            <format attr='fill-color' id='annotation_9' value='#00000000' />
+            <format attr='fill-color' id='annotation_10' value='#00000000' />
+            <format attr='fill-color' id='annotation_11' value='#00000000' />
+            <format attr='fill-color' id='annotation_12' value='#00000000' />
           </style-rule>
           <style-rule element='map'>
             <format attr='washout' value='0.0' />
@@ -1248,7 +1310,7 @@
             <mark class='Pie' />
             <encodings>
               <color column='[federated.0ibg9u21a1zdsg17cetup0v5alcd].[none:Bedrooms (bin):ok]' />
-              <wedge-size column='[federated.0ibg9u21a1zdsg17cetup0v5alcd].[sum:bedrooms:qk]' />
+              <wedge-size column='[federated.0ibg9u21a1zdsg17cetup0v5alcd].[cnt:bedrooms:qk]' />
             </encodings>
           </pane>
         </panes>
@@ -1347,16 +1409,16 @@
           </mark-label>
         </mark-labels>
         <annotations>
-          <annotation class='area' id='3' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+          <annotation class='area' id='9' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
             <formatted-text>
               <run>4</run>
             </formatted-text>
             <top-left>
               <visual-coordinate class='axis'>
-                <x-coord cell-offset='0.380597'>
+                <x-coord cell-offset='0.39801'>
                   <node-reference />
                 </x-coord>
-                <y-coord cell-offset='0.456954'>
+                <y-coord cell-offset='0.463576'>
                   <node-reference />
                 </y-coord>
                 <page-reference />
@@ -1364,10 +1426,10 @@
             </top-left>
             <bottom-right>
               <visual-coordinate class='axis'>
-                <x-coord cell-offset='0.504975'>
+                <x-coord cell-offset='0.437811'>
                   <node-reference />
                 </x-coord>
-                <y-coord cell-offset='0.677704'>
+                <y-coord cell-offset='0.534216'>
                   <node-reference />
                 </y-coord>
                 <page-reference />
@@ -1375,16 +1437,16 @@
             </bottom-right>
             <text x='0.5' y='0.5' />
           </annotation>
-          <annotation class='area' id='4' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+          <annotation class='area' id='10' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
             <formatted-text>
               <run>3</run>
             </formatted-text>
             <top-left>
               <visual-coordinate class='axis'>
-                <x-coord cell-offset='0.511194'>
+                <x-coord cell-offset='0.503731'>
                   <node-reference />
                 </x-coord>
-                <y-coord cell-offset='0.412804'>
+                <y-coord cell-offset='0.452539'>
                   <node-reference />
                 </y-coord>
                 <page-reference />
@@ -1392,10 +1454,10 @@
             </top-left>
             <bottom-right>
               <visual-coordinate class='axis'>
-                <x-coord cell-offset='0.635572'>
+                <x-coord cell-offset='0.628109'>
                   <node-reference />
                 </x-coord>
-                <y-coord cell-offset='0.633554'>
+                <y-coord cell-offset='0.673289'>
                   <node-reference />
                 </y-coord>
                 <page-reference />
@@ -1403,72 +1465,16 @@
             </bottom-right>
             <text x='0.5' y='0.5' />
           </annotation>
-          <annotation class='area' id='5' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
-            <formatted-text>
-              <run>5</run>
-            </formatted-text>
-            <top-left>
-              <visual-coordinate class='axis'>
-                <x-coord cell-offset='0.427861'>
-                  <node-reference />
-                </x-coord>
-                <y-coord cell-offset='0.322296'>
-                  <node-reference />
-                </y-coord>
-                <page-reference />
-              </visual-coordinate>
-            </top-left>
-            <bottom-right>
-              <visual-coordinate class='axis'>
-                <x-coord cell-offset='0.473881'>
-                  <node-reference />
-                </x-coord>
-                <y-coord cell-offset='0.392936'>
-                  <node-reference />
-                </y-coord>
-                <page-reference />
-              </visual-coordinate>
-            </bottom-right>
-            <text x='0.5' y='0.5' />
-          </annotation>
-          <annotation class='area' id='6' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
-            <formatted-text>
-              <run>6</run>
-            </formatted-text>
-            <top-left>
-              <visual-coordinate class='axis'>
-                <x-coord cell-offset='0.427861'>
-                  <node-reference />
-                </x-coord>
-                <y-coord cell-offset='0.181015'>
-                  <node-reference />
-                </y-coord>
-                <page-reference />
-              </visual-coordinate>
-            </top-left>
-            <bottom-right>
-              <visual-coordinate class='axis'>
-                <x-coord cell-offset='0.549751'>
-                  <node-reference />
-                </x-coord>
-                <y-coord cell-offset='0.401766'>
-                  <node-reference />
-                </y-coord>
-                <page-reference />
-              </visual-coordinate>
-            </bottom-right>
-            <text x='0.5' y='0.5' />
-          </annotation>
-          <annotation class='area' id='7' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+          <annotation class='area' id='11' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
             <formatted-text>
               <run>2</run>
             </formatted-text>
             <top-left>
               <visual-coordinate class='axis'>
-                <x-coord cell-offset='0.496269'>
+                <x-coord cell-offset='0.527363'>
                   <node-reference />
                 </x-coord>
-                <y-coord cell-offset='0.298013'>
+                <y-coord cell-offset='0.335541'>
                   <node-reference />
                 </y-coord>
                 <page-reference />
@@ -1476,10 +1482,38 @@
             </top-left>
             <bottom-right>
               <visual-coordinate class='axis'>
-                <x-coord cell-offset='0.542289'>
+                <x-coord cell-offset='0.564677'>
                   <node-reference />
                 </x-coord>
-                <y-coord cell-offset='0.388521'>
+                <y-coord cell-offset='0.397351'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+          <annotation class='area' id='12' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run>5</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.447761'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.300221'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.482587'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.364238'>
                   <node-reference />
                 </y-coord>
                 <page-reference />
@@ -1802,7 +1836,7 @@
       </viewpoint>
       <simple-id uuid='{6E3202C8-93C4-42BC-B706-D579D4964529}' />
     </window>
-    <window class='worksheet' name='bed pi'>
+    <window class='worksheet' maximized='true' name='bed pi'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1841,7 +1875,7 @@
       </viewpoint>
       <simple-id uuid='{3216CB63-EBD2-404B-B82F-923CCF2F1B94}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 11'>
+    <window class='worksheet' name='Sheet 11'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -4694,91 +4728,83 @@
     </thumbnail>
     <thumbnail height='192' name='bed pi' width='192'>
       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
-      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
+      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
+      eXhvsyCgJoEAAAAASUVORK5CYII=
     </thumbnail>
   </thumbnails>
 </workbook>
