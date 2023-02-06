@@ -83,7 +83,7 @@ select title, author_lname,
 case 
 when count(*) = 1 then '1 book'
 else concat(count(*), ' books')
-end as COUNT
+end as inventory
 from books
 group by author_lname, author_fname
 order by author_lname;
